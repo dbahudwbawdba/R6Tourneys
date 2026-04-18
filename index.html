@@ -1,68 +1,115 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GiftHub Tournaments</title>
+  <title>Tournament Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
 </head>
-<body class="bg-black text-white font-sans">
+<body class="bg-gradient-to-br from-[#0b0f1a] via-[#0f172a] to-[#020617] text-white font-sans">
 
   <!-- Navbar -->
-  <nav class="flex justify-between items-center p-4 border-b border-gray-800">
-    <h1 class="text-xl font-bold text-orange-400">GiftHub</h1>
-    <div class="space-x-6">
-      <a href="#" class="hover:text-orange-400">Dashboard</a>
-      <a href="#" class="hover:text-orange-400">Tournaments</a>
-      <a href="#" class="hover:text-orange-400">Teams</a>
-      <a href="#" class="hover:text-orange-400">Leaderboard</a>
+  <nav class="flex justify-between items-center p-5 border-b border-white/10 backdrop-blur-md">
+    <h1 class="text-xl font-bold tracking-wide">Tournament Hub</h1>
+    <div class="space-x-6 hidden md:block">
+      <a href="#" class="hover:text-cyan-400">Home</a>
+      <a href="#" class="hover:text-cyan-400">Tournaments</a>
+      <a href="#" class="hover:text-cyan-400">Teams</a>
+      <a href="#" class="hover:text-cyan-400">Leaderboard</a>
     </div>
-    <button class="bg-indigo-600 px-4 py-2 rounded-xl hover:bg-indigo-700">
-      Login with Discord
+    <button onclick="openModal()" class="bg-cyan-500 px-4 py-2 rounded-xl hover:bg-cyan-600 transition">
+      Login
     </button>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="text-center py-20">
-    <h2 class="text-5xl font-bold mb-4">GiftHub Tournament Hub</h2>
-    <p class="text-gray-400 mb-8">Host and join competitive tournaments</p>
+  <!-- Hero -->
+  <section class="text-center py-28 px-4">
+    <h2 class="text-6xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">
+      Competitive Tournament Platform
+    </h2>
+    <p class="text-gray-400 max-w-xl mx-auto mb-10">
+      Join tournaments, compete with your team, and climb the leaderboard.
+    </p>
     <div class="space-x-4">
-      <button class="bg-indigo-600 px-6 py-3 rounded-xl hover:bg-indigo-700">Login</button>
-      <button class="border border-gray-600 px-6 py-3 rounded-xl hover:border-orange-400">View Tournaments</button>
+      <button onclick="openModal()" class="bg-cyan-500 px-8 py-3 rounded-xl hover:bg-cyan-600 transition shadow-lg">
+        Get Started
+      </button>
+      <button class="border border-white/20 px-8 py-3 rounded-xl hover:border-cyan-400 transition">
+        Browse
+      </button>
     </div>
   </section>
 
-  <!-- Tournaments Section -->
-  <section class="px-10 pb-20">
-    <h3 class="text-2xl font-semibold mb-6">Tournaments</h3>
+  <!-- Tournaments -->
+  <section class="px-10 pb-24">
+    <h3 class="text-3xl font-semibold mb-10">Active Tournaments</h3>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Card -->
-      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg">
-        <h4 class="text-xl font-bold">Weekly Cup</h4>
-        <p class="text-gray-400">8 Teams • Single Elim</p>
-        <button class="mt-4 w-full bg-orange-500 py-2 rounded-xl hover:bg-orange-600">Join</button>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <div class="bg-white/5 backdrop-blur-lg p-6 rounded-2xl hover:scale-105 transition">
+        <h4 class="text-xl font-bold mb-2">Weekly Showdown</h4>
+        <p class="text-gray-400">8 Teams • BO1</p>
+        <button class="mt-4 w-full bg-cyan-500 py-2 rounded-xl hover:bg-cyan-600 transition">Join</button>
       </div>
 
-      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg">
-        <h4 class="text-xl font-bold">Pro League Qualifier</h4>
+      <div class="bg-white/5 backdrop-blur-lg p-6 rounded-2xl hover:scale-105 transition">
+        <h4 class="text-xl font-bold mb-2">Elite Cup</h4>
         <p class="text-gray-400">16 Teams • BO3</p>
-        <button class="mt-4 w-full bg-orange-500 py-2 rounded-xl hover:bg-orange-600">Join</button>
+        <button class="mt-4 w-full bg-cyan-500 py-2 rounded-xl hover:bg-cyan-600 transition">Join</button>
       </div>
 
-      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg">
-        <h4 class="text-xl font-bold">Beginner Cup</h4>
-        <p class="text-gray-400">Noob Friendly</p>
-        <button class="mt-4 w-full bg-orange-500 py-2 rounded-xl hover:bg-orange-600">Join</button>
+      <div class="bg-white/5 backdrop-blur-lg p-6 rounded-2xl hover:scale-105 transition">
+        <h4 class="text-xl font-bold mb-2">Open Ladder</h4>
+        <p class="text-gray-400">All skill levels</p>
+        <button class="mt-4 w-full bg-cyan-500 py-2 rounded-xl hover:bg-cyan-600 transition">Join</button>
       </div>
+
     </div>
   </section>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="fixed inset-0 bg-black/70 hidden items-center justify-center">
+    <div class="bg-[#0f172a] p-8 rounded-2xl w-96 text-center animate-fadeIn">
+      <h2 class="text-2xl font-bold mb-4">Login</h2>
+      <p class="text-gray-400 mb-6">Sign in with Discord to continue</p>
+      <button onclick="fakeLogin()" class="bg-indigo-500 w-full py-3 rounded-xl hover:bg-indigo-600 transition">
+        Login with Discord
+      </button>
+      <button onclick="closeModal()" class="mt-4 text-gray-400 hover:text-white">Cancel</button>
+    </div>
+  </div>
 
   <!-- Footer -->
-  <footer class="text-center py-6 border-t border-gray-800 text-gray-500">
-    © 2026 GiftHub. All rights reserved.
+  <footer class="text-center py-8 border-t border-white/10 text-gray-500">
+    © 2026 Tournament Platform
   </footer>
+
+  <script>
+    function openModal() {
+      document.getElementById('loginModal').classList.remove('hidden');
+      document.getElementById('loginModal').classList.add('flex');
+    }
+
+    function closeModal() {
+      document.getElementById('loginModal').classList.add('hidden');
+    }
+
+    function fakeLogin() {
+      alert('Logged in (demo)');
+      closeModal();
+    }
+  </script>
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.2s ease;
+    }
+  </style>
 
 </body>
 </html>
