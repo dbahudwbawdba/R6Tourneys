@@ -1,1 +1,68 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GiftHub Tournaments</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center p-4 border-b border-gray-800">
+    <h1 class="text-xl font-bold text-orange-400">GiftHub</h1>
+    <div class="space-x-6">
+      <a href="#" class="hover:text-orange-400">Dashboard</a>
+      <a href="#" class="hover:text-orange-400">Tournaments</a>
+      <a href="#" class="hover:text-orange-400">Teams</a>
+      <a href="#" class="hover:text-orange-400">Leaderboard</a>
+    </div>
+    <button class="bg-indigo-600 px-4 py-2 rounded-xl hover:bg-indigo-700">
+      Login with Discord
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="text-center py-20">
+    <h2 class="text-5xl font-bold mb-4">GiftHub Tournament Hub</h2>
+    <p class="text-gray-400 mb-8">Host and join competitive tournaments</p>
+    <div class="space-x-4">
+      <button class="bg-indigo-600 px-6 py-3 rounded-xl hover:bg-indigo-700">Login</button>
+      <button class="border border-gray-600 px-6 py-3 rounded-xl hover:border-orange-400">View Tournaments</button>
+    </div>
+  </section>
+
+  <!-- Tournaments Section -->
+  <section class="px-10 pb-20">
+    <h3 class="text-2xl font-semibold mb-6">Tournaments</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card -->
+      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg">
+        <h4 class="text-xl font-bold">Weekly Cup</h4>
+        <p class="text-gray-400">8 Teams • Single Elim</p>
+        <button class="mt-4 w-full bg-orange-500 py-2 rounded-xl hover:bg-orange-600">Join</button>
+      </div>
+
+      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg">
+        <h4 class="text-xl font-bold">Pro League Qualifier</h4>
+        <p class="text-gray-400">16 Teams • BO3</p>
+        <button class="mt-4 w-full bg-orange-500 py-2 rounded-xl hover:bg-orange-600">Join</button>
+      </div>
+
+      <div class="bg-gray-900 p-6 rounded-2xl shadow-lg">
+        <h4 class="text-xl font-bold">Beginner Cup</h4>
+        <p class="text-gray-400">Noob Friendly</p>
+        <button class="mt-4 w-full bg-orange-500 py-2 rounded-xl hover:bg-orange-600">Join</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 border-t border-gray-800 text-gray-500">
+    © 2026 GiftHub. All rights reserved.
+  </footer>
+
+</body>
+</html>
